@@ -7,8 +7,8 @@
 
     /* Main backgrounds */
     --light-bg-color: #240046;
-    --section-bg-color: #FF00FF;
-    --nav-bg-color: #10002b;
+    --section-bg-color: #ffffff;
+    --nav-bg-color: #e91e63;
 
     /* Cards */
     --white-color: #ffffff;
@@ -177,7 +177,7 @@ nav ul li a:hover::after {
 #projects,
 #skills,
 #contact {
-    background-color: #FF00FF;
+    background-color: #e91e63;
     color: #ffffff;
 }
 
