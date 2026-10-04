@@ -167,7 +167,6 @@ nav ul li a:hover::after {
 
 .section {
     padding: 100px 0;
-    background-color: #FF00FF;
     color: #ffffff;
 }
 
@@ -177,7 +176,6 @@ nav ul li a:hover::after {
 #projects,
 #skills,
 #contact {
-    background-color: #e91e63;
     color: #ffffff;
 }
 
