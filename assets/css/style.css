@@ -2,9 +2,9 @@
 /* --- 1. Variables (Modern Tech Palette) --- */
 :root {
     /* This template uses a professional "Modern Tech" color scheme. */
-    --primary-color: #A0A;   /* Midnight Blue */
-    --secondary-color: #A5F; /* Slate Blue */
-    --accent-color: #F5A;    /* Vivid Sky Blue */
+    --primary-color: #aa00a9;   /* Midnight Blue */
+    --secondary-color: #ff0188; /* Slate Blue */
+    --accent-color: #ab55ff;    /* Vivid Sky Blue */
 
     /* --- Shared Variables (These usually don't need to change) --- */
     --light-bg-color: #F8F9FA;
