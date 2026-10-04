@@ -2,13 +2,13 @@
 
 :root {
     --primary-color: #7b2cbf;
-    --secondary-color: #9d4edd;
+    --secondary-color: #740f31;
     --accent-color: #c77dff;
 
     /* Main backgrounds */
     --light-bg-color: #240046;
     --section-bg-color: #ffffff;
-    --nav-bg-color: #e91e63;
+    --nav-bg-color: #740f31;
 
     /* Cards */
     --white-color: #ffffff;
