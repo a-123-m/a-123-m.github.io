@@ -1,22 +1,27 @@
-/* --- 1. Variables --- */
+/* =====================================================
+   1. VARIABLES
+   ===================================================== */
 
 :root {
+    /* Brand */
     --primary-color: #7b2cbf;
-    --secondary-color: #740f31;
+    --primary-dark: #5a189a;
     --accent-color: #c77dff;
 
-    /* Main backgrounds */
-    --light-bg-color: #240046;
-    --section-bg-color: #ffffff;
-    --nav-bg-color: #15011a;
+    /* Page backgrounds (alternating section shades) */
+    --bg-dark: #1a0536;
+    --bg-darker: #120324;
+    --nav-bg-color: #0d021a;
 
     /* Cards */
-    --white-color: #ffffff;
     --card-bg-color: #ffffff;
+    --card-ink: #2b2438;
+    --card-muted: #5b5668;
+    --card-line: #ece6f3;
 
-    /* Text */
-    --dark-text-color: #ffffff;
-    --light-text-color: #ffffff;
+    /* Text on dark backgrounds */
+    --text-on-dark: #f5effc;
+    --text-on-dark-muted: #d4c4e8;
 
     /* Fonts */
     --font-heading: 'Playfair Display', serif;
@@ -24,7 +29,10 @@
 }
 
 
-/* --- 2. Base & Reset Styles --- */
+/* =====================================================
+   2. BASE & RESET
+   ===================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -33,14 +41,15 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* keeps section titles clear of the sticky nav */
 }
 
 body {
     font-family: var(--font-body);
     font-weight: 400;
     line-height: 1.8;
-    background-color: var(--light-bg-color);
-    color: #ffffff;
+    background-color: var(--bg-dark);
+    color: var(--text-on-dark);
 }
 
 .container {
@@ -53,12 +62,11 @@ body {
 a {
     text-decoration: none;
     color: var(--accent-color);
-    transition: all 0.3s ease-in-out;
+    transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 a:hover {
     color: #ffffff;
-    opacity: 0.9;
 }
 
 img {
@@ -66,45 +74,99 @@ img {
     height: auto;
 }
 
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
 
-/* --- 3. Header --- */
-header {
-    background: linear-gradient(
-        135deg,
-        #10002b,
-        #3c096c,
-        #7b2cbf
-    );
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+    background: #ffffff;
+    color: var(--primary-dark);
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: 700;
+    z-index: 2000;
+}
+
+.skip-link:focus {
+    left: 10px;
+}
+
+
+/* =====================================================
+   3. HEADER / HERO
+   ===================================================== */
+
+.hero {
+    background: linear-gradient(135deg, #10002b 0%, #3c096c 55%, #7b2cbf 100%);
     color: #ffffff;
-    padding: 70px 0;
+    padding: 90px 0 80px;
     text-align: center;
 }
 
-header h1 {
+.hero h1 {
     font-family: var(--font-heading);
     font-size: 4rem;
     font-weight: 700;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    line-height: 1.2;
     color: #ffffff;
 }
 
-header p {
-    font-size: 1.3rem;
+/* Typing line */
+.hero-roles {
+    font-size: 1.6rem;
     font-weight: 300;
-    color: #ffffff;
-    opacity: 0.9;
-    margin-bottom: 35px;
+    color: #f0e3ff;
+    min-height: 2.4rem; /* prevents the page jumping while text is typed/erased */
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.5rem;
+    margin-left: 4px;
+    vertical-align: text-bottom;
+    background-color: var(--accent-color);
+    animation: blink 0.9s steps(1) infinite;
+}
+
+@keyframes blink {
+    0%, 50%   { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.hero-actions .btn {
+    flex: 0 0 auto;
+    min-width: 170px;
 }
 
 
-/* --- 3.5 Social Icons --- */
+/* --- Social icons --- */
 .social-links a {
     color: #ffffff;
-    font-size: 1.6rem;
-    margin: 0 15px;
-    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 1.7rem;
+    margin: 0 14px;
     display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
@@ -113,30 +175,33 @@ header p {
 }
 
 
-/* --- 4. Navigation --- */
+/* =====================================================
+   4. NAVIGATION
+   ===================================================== */
+
 nav {
-    background-color: var(--nav-bg-color);
+    background-color: rgba(13, 2, 26, 0.95);
     backdrop-filter: blur(8px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px solid rgba(199, 125, 255, 0.25);
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding: 10px 0;
+    padding: 8px 0;
 }
 
 nav ul li a {
-    color: #ffffff;
-    font-weight: 400;
-    padding: 15px 25px;
+    color: var(--text-on-dark);
+    padding: 14px 24px;
     font-size: 1rem;
     letter-spacing: 0.5px;
     position: relative;
+    display: inline-block;
 }
 
 nav ul li a:hover {
@@ -146,7 +211,7 @@ nav ul li a:hover {
 nav ul li a::after {
     content: '';
     position: absolute;
-    bottom: 10px;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
@@ -161,26 +226,17 @@ nav ul li a:hover::after {
 
 
 /* =====================================================
-   5. MAIN SECTIONS
-   About | Projects | Skills | Contact
+   5. SECTIONS
    ===================================================== */
 
 .section {
     padding: 100px 0;
-    color: #ffffff;
 }
 
+/* Alternating backgrounds give each section its own identity */
+.section-dark   { background-color: var(--bg-dark); }
+.section-darker { background-color: var(--bg-darker); }
 
-/* Force all four sections to use #FF00FF */
-#about,
-#projects,
-#skills,
-#contact {
-    color: #ffffff;
-}
-
-
-/* --- Section Headings --- */
 .section h2 {
     text-align: center;
     font-family: var(--font-heading);
@@ -199,14 +255,12 @@ nav ul li a:hover::after {
     transform: translateX(-50%);
     width: 70px;
     height: 3px;
-    background: #ffffff;
+    background: var(--accent-color);
+    border-radius: 2px;
 }
 
 
-/* =====================================================
-   5.1 ABOUT SECTION
-   ===================================================== */
-
+/* --- 5.1 About --- */
 .about-content {
     display: flex;
     align-items: center;
@@ -219,10 +273,11 @@ nav ul li a:hover::after {
 .profile-photo {
     width: 280px;
     height: 280px;
+    flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
-    border: 7px solid #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 6px solid var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .about-text {
@@ -231,16 +286,13 @@ nav ul li a:hover::after {
 
 .about-text p {
     font-size: 1.1rem;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     line-height: 1.9;
-    color: #ffffff;
+    color: var(--text-on-dark);
 }
 
 
-/* =====================================================
-   5.5 PROJECT CARDS
-   ===================================================== */
-
+/* --- 5.2 Project cards --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -248,25 +300,27 @@ nav ul li a:hover::after {
 }
 
 .project-card {
-    background: #ffffff;
-    color: #343A40;
-    border-radius: 8px;
+    background: var(--card-bg-color);
+    color: var(--card-ink);
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     display: flex;
     flex-direction: column;
 }
 
 .project-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .project-card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    object-position: top center; /* keeps the top of the dashboard visible */
+    background: #f3eef8;
 }
 
 .project-card-content {
@@ -278,13 +332,14 @@ nav ul li a:hover::after {
 
 .project-card-content h3 {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.3;
     margin-bottom: 15px;
     color: var(--primary-color);
 }
 
 .project-card-content p {
-    color: #6c757d;
+    color: var(--card-muted);
     margin-bottom: 30px;
     flex-grow: 1;
 }
@@ -301,54 +356,47 @@ nav ul li a:hover::after {
     display: inline-block;
     background: var(--primary-color);
     color: #ffffff;
-    padding: 12px 20px;
-    border-radius: 5px;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-family: var(--font-body);
     font-weight: 700;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
     flex: 1;
     letter-spacing: 0.5px;
-    border: 2px solid transparent;
+    border: 2px solid var(--primary-color);
 }
 
 .btn:hover {
-    background: var(--secondary-color);
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
     color: #ffffff;
     transform: translateY(-2px);
 }
 
+/* Outline button used in the hero */
 .btn-secondary {
     background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
-    color: #ffffff;
+    background: #ffffff;
+    border-color: #ffffff;
+    color: var(--primary-dark);
 }
 
 
-/* =====================================================
-   6. SKILLS SECTION
-   ===================================================== */
-
-#skills .container {
-    max-width: 1100px;
-}
-
+/* --- 5.3 Skills --- */
 .skills-table {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-top: 50px;
-
-    /* Skills card remains WHITE */
-    background-color: #ffffff;
-
+    background-color: var(--card-bg-color);
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 .skill-column {
@@ -356,7 +404,7 @@ nav ul li a:hover::after {
 }
 
 .skill-column:not(:last-child) {
-    border-right: 1px solid #e9ecef;
+    border-right: 1px solid var(--card-line);
 }
 
 .skill-header {
@@ -366,7 +414,7 @@ nav ul li a:hover::after {
 }
 
 .skill-header i {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--primary-color);
     margin-right: 15px;
     width: 40px;
@@ -374,7 +422,8 @@ nav ul li a:hover::after {
 
 .skill-header h3 {
     font-family: var(--font-heading);
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
     color: var(--primary-color);
 }
 
@@ -384,22 +433,21 @@ nav ul li a:hover::after {
 }
 
 .skill-list li {
-    padding: 12px 0;
+    padding: 12px 0 12px 25px;
     font-size: 1.05rem;
-    color: #343A40;
-    border-bottom: 1px solid #f1f3f5;
+    color: var(--card-ink);
+    border-bottom: 1px solid var(--card-line);
     position: relative;
-    padding-left: 25px;
 }
 
 .skill-list li::before {
-    content: '›';
+    content: '\203A';
     position: absolute;
     left: 0;
-    top: 12px;
+    top: 11px;
     color: var(--primary-color);
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .skill-list li:last-child {
@@ -407,10 +455,7 @@ nav ul li a:hover::after {
 }
 
 
-/* =====================================================
-   7. CONTACT SECTION
-   ===================================================== */
-
+/* --- 5.4 Contact --- */
 #contact .container {
     max-width: 800px;
 }
@@ -418,81 +463,81 @@ nav ul li a:hover::after {
 .contact-form {
     max-width: 700px;
     margin: 0 auto;
-
-    /* Contact card remains WHITE */
-    background: #ffffff;
-
+    background: var(--card-bg-color);
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form > p {
+    color: var(--card-muted);
+    margin-bottom: 25px;
 }
 
 .form-group {
     margin-bottom: 25px;
 }
 
-.contact-form > p {
-    color: #343A40;
-    margin-bottom: 25px;
-}
-
 .contact-form label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1rem;
-    color: #343A40;
+    color: var(--card-ink);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 14px 15px;
+    border: 1px solid #cfc6dc;
+    border-radius: 6px;
     font-family: var(--font-body);
     font-size: 1rem;
+    color: var(--card-ink);
+    background: #ffffff;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #8a8497;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(199, 125, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.25);
 }
 
 .contact-form button.btn {
     width: 100%;
     padding: 15px;
     font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    border: none;
     cursor: pointer;
 }
 
 
 /* =====================================================
-   8. FOOTER
+   6. FOOTER
    ===================================================== */
 
 footer {
     background: var(--nav-bg-color);
-    color: #ffffff;
+    color: var(--text-on-dark-muted);
     text-align: center;
     padding: 40px 0;
-    margin-top: 0;
-}
-
-footer p {
-    color: #ffffff;
-    opacity: 0.7;
+    border-top: 1px solid rgba(199, 125, 255, 0.2);
 }
 
 
 /* =====================================================
-   9. RESPONSIVE DESIGN
+   7. RESPONSIVE DESIGN
    ===================================================== */
 
 @media (max-width: 992px) {
@@ -509,32 +554,37 @@ footer p {
 
 @media (max-width: 768px) {
 
-    header h1 {
+    .hero {
+        padding: 70px 0 60px;
+    }
+
+    .hero h1 {
         font-size: 2.8rem;
+    }
+
+    .hero-roles {
+        font-size: 1.3rem;
     }
 
     .about-content {
         flex-direction: column;
         text-align: center;
-    }
-
-    #projects .container {
-        padding: 0 5px;
+        gap: 40px;
     }
 
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .skills-table {
         grid-template-columns: 1fr;
-        padding: 20px;
+        padding: 25px;
         gap: 40px;
     }
 
     .skill-column:not(:last-child) {
         border-right: none;
-        border-bottom: 1px solid #e9ecef;
+        border-bottom: 1px solid var(--card-line);
         padding-bottom: 30px;
     }
 }
@@ -542,8 +592,14 @@ footer p {
 
 @media (max-width: 500px) {
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-roles {
+        font-size: 1.1rem;
+        min-height: 2rem;
     }
 
     nav ul {
@@ -554,15 +610,43 @@ footer p {
         padding: 10px 12px;
     }
 
-    header h1 {
-        font-size: 2.3rem;
-    }
-
     .section {
         padding: 70px 0;
     }
 
     .section h2 {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
+        margin-bottom: 55px;
+    }
+
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card-content,
+    .contact-form {
+        padding: 25px;
+    }
+}
+
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+
+    .cursor {
+        animation: none;
     }
 }
