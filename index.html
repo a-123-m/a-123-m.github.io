@@ -3,45 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--💡UPDATE: Change the title to your name-->
-    <title>Aiswarya Mohan | Data Analysis Portfolio</title>
-      
-    <!--💡UPDATE: Add your favicon here. You can generate one at realfavicongenerator.net-->
-    <link rel="icon" type="image/png" href="/favicon-32x32_new.png">
-    <link rel="apple-touch-icon" href="/favicon-32x32_new.png">
-    
-    <!-- Google Fonts for Elegant Typography -->
+
+    <title>Aiswarya Mohan | Data Analyst Portfolio</title>
+    <meta name="description" content="Portfolio of Aiswarya Mohan, a data analyst building dashboards and reports with Power BI, SQL, Excel and Python.">
+    <meta name="theme-color" content="#140326">
+
+    <!-- Favicon: place the file at assets/images/favicon-32x32_new.png (or change the path) -->
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32_new.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon-32x32_new.png">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <!-- Your Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- HEADER SECTION -->
-<header>
+<a class="skip-link" href="#about">Skip to content</a>
+
+<!-- HEADER -->
+<header class="hero">
     <div class="container">
-        <!--💡UPDATE: Change to your name and title-->
         <h1>AISWARYA MOHAN</h1>
-        <p> Data Analyst | Business Analyst | Power BI Developer </p>
+
+        <!-- Typing animation: roles are written one by one (script at the bottom of this file) -->
+        <p class="hero-roles" aria-label="Data Analyst, Business Analyst, Power BI Developer">
+            <span id="typed-text" aria-hidden="true">Data Analyst</span><span class="cursor" aria-hidden="true"></span>
+        </p>
+
         <div class="social-links">
-            <!--💡UPDATE: Add your social media links and CV file-->
-            <a href="https://www.linkedin.com/in/aiswarya-mohan-950948221/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/a-123-m" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="assets/AISWARYA MOHAN RESUME_NEWW_DA.pdf" download title="Download CV"><i class="fas fa-file-arrow-down"></i></a>
+            <a href="https://www.linkedin.com/in/aiswarya-mohan-950948221/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/a-123-m" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+            <a href="assets/AISWARYA%20MOHAN%20RESUME_NEWW_DA.pdf" download title="Download CV" aria-label="Download CV"><i class="fas fa-file-arrow-down"></i></a>
+        </div>
+
+        <div class="hero-actions">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
         </div>
     </div>
 </header>
 
 <!-- NAVIGATION -->
-<nav>
+<nav aria-label="Main navigation">
     <div class="container">
         <ul>
             <li><a href="#about">About</a></li>
@@ -52,110 +62,103 @@
     </div>
 </nav>
 
-<!-- ABOUT SECTION -->
-<section id="about" class="section">
+<main>
+
+<!-- ABOUT -->
+<section id="about" class="section section-dark">
     <div class="container">
         <h2>About Me</h2>
         <div class="about-content">
-            <!--💡UPDATE: Change the image to your own profile photo in assets/images/-->
-            <img src="assets/images/aiswarya_newwwwpic.png" alt="Aiswarya Mohan" class="profile-photo">
+            <img src="assets/images/aiswarya_newwwwpic.png" alt="Portrait of Aiswarya Mohan" class="profile-photo">
             <div class="about-text">
-                <!--💡UPDATE: Write your own 'About Me' text here-->
-                <p> I’m an MCA graduate who started my career in software testing, where I worked on both high and low-revenue casino and poker games. That experience taught me to pay attention to details, think analytically, and understand how products perform in the real world.
-As I worked with different teams and looked at application and business performance, I became increasingly interested in data and the insights behind it. </p>
-<p> That’s what led me to move toward Data Analytics. Today, I’m building my skills in Excel, SQL, Power BI, Python, and Tableau through hands-on projects, with the goal of turning raw data into insights that can help businesses make better decisions. </p>
-<p> I’m eager to work in a data-driven organization where I can apply my skills to real-world problems and continue my growth ahead. </p>
-                <p>This portfolio showcases my projects across various sectors.</p>
+                <p>I'm an MCA graduate who started my career in software testing, working on both high and low-revenue casino and poker games. That experience taught me to pay close attention to detail, think analytically, and understand how products perform in the real world.</p>
+                <p>As I worked with different teams and looked at application and business performance, I became increasingly interested in the data behind it. That curiosity led me to data analytics. Today I'm building my skills in Excel, SQL, Power BI, Python and Tableau through hands-on projects, with the goal of turning raw data into insights that help businesses make better decisions.</p>
+                <p>I'm looking to join a data-driven organization where I can apply these skills to real-world problems and keep growing. This portfolio showcases my projects across different sectors.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PROJECTS SECTION -->
-<section id="projects" class="section">
+<!-- PROJECTS -->
+<section id="projects" class="section section-darker">
     <div class="container">
         <h2>My Projects</h2>
         <div class="projects-grid">
 
-            <!--💡UPDATE: Replace this with your own project. Add as many as you like!-->
             <!-- Project 1 -->
-             <div class="project-card">
-                <!--💡UPDATE: Add a preview image of your project to assets/images/ -->
-                <img src="assets/images/dash1.png" alt="Project One Preview">
+            <article class="project-card">
+                <img src="assets/images/dash1.png" alt="Preview of the Healthcare Analytics Dashboard" loading="lazy">
                 <div class="project-card-content">
-                    <h3>HealthCare Analytics Dashboard</h3>
+                    <h3>Healthcare Analytics Dashboard</h3>
                     <p>
-                    Analyzed 310,000+ disease incidents across 300 hospitals, 92 locations, 40,000 patients and 50 disease conditions 
-                    to manage large volumes of data generated by healthcare networks and help stakeholders in the decision making process 
-                    by answering important business questions.
+                        Analyzed 310,000+ disease incidents across 300 hospitals, 92 locations, 40,000 patients and 50 disease conditions
+                        to help stakeholders manage large volumes of healthcare network data and make better decisions
+                        by answering key business questions.
                     </p>
                     <div class="project-buttons">
-                        <!--💡UPDATE: Add link to your project's code/documentation on GitHub-->
-                        <a href="https://github.com/a-123-m/HealthCare-Analytics-Dashboard" target="_blank" class="btn">View Project</a>
+                        <a href="https://github.com/a-123-m/HealthCare-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                     </div>
                 </div>
-            </div>
+            </article>
 
             <!-- Project 2 -->
-            <div class="project-card">
-                <img src="assets/images/dash2.png" alt="Project Two Preview">
+            <article class="project-card">
+                <img src="assets/images/dash2.png" alt="Preview of the Ajio E-commerce Online Shopping Dashboard" loading="lazy">
                 <div class="project-card-content">
-                    <h3>Ajio Ecommerce Online Shopping Dashboard</h3>
+                    <h3>Ajio E-commerce Online Shopping Dashboard</h3>
                     <p>
-                    Explored 4,000+ e-commerce records spanning sales, returns, payments, and customer behavior to identify business patterns, 
-                    highlight top-performing areas and uncover opportunities for improvement
+                        Explored 4,000+ e-commerce records spanning sales, returns, payments and customer behavior
+                        to identify business patterns, highlight top-performing areas and uncover opportunities for improvement.
                     </p>
                     <div class="project-buttons">
-                        <a href="https://github.com/a-123-m/Ajio-Ecommerce-Online-Shopping-Dashboard---Excel-SQL-and-PowerBI" target="_blank" class="btn">View Project</a>
+                        <a href="https://github.com/a-123-m/Ajio-Ecommerce-Online-Shopping-Dashboard---Excel-SQL-and-PowerBI" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                     </div>
                 </div>
-            </div>
+            </article>
 
             <!-- Project 3 -->
-            <div class="project-card">
-                <img src="assets/images/dash3.png" alt="Project Three Preview">
+            <article class="project-card">
+                <img src="assets/images/dash3.png" alt="Preview of the Amul Business Analytics Dashboard" loading="lazy">
                 <div class="project-card-content">
-                    <h3>Amul- The Taste of India Business Analytics Dashboard</h3>
+                    <h3>Amul: The Taste of India Business Analytics Dashboard</h3>
                     <p>
-                    Consolidated 27,000+ records across fact and dimension tables covering sales, products, customers, regions and returns for enterprise-wide business analytics 
-                    to identify key business drivers, performance trends and opportunities for improvement.
+                        Consolidated 27,000+ records across fact and dimension tables covering sales, products, customers, regions and returns
+                        to identify key business drivers, performance trends and opportunities for improvement.
                     </p>
                     <div class="project-buttons">
-                        <a href="https://github.com/a-123-m/Amul---The-Taste-of-India-Business-Analytics-Dashboard" target="_blank" class="btn">View Project</a>
+                        <a href="https://github.com/a-123-m/Amul---The-Taste-of-India-Business-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                     </div>
                 </div>
-            </div>
+            </article>
 
             <!-- Project 4 -->
-            <div class="project-card">
-                <img src="assets/images/dash4.png" alt="Project Four Preview">
+            <article class="project-card">
+                <img src="assets/images/dash4.png" alt="Preview of the Supply Chain Data Analysis project" loading="lazy">
                 <div class="project-card-content">
-                    <h3>Supply Chain Data Analysis Python Project</h3>
+                    <h3>Supply Chain Data Analysis (Python)</h3>
                     <p>
-                    Processed 105,000+ records covering suppliers, warehouses, carriers and shipping modes 
-                    to uncover operational trends and transform raw operational data into actionable business insights.
+                        Processed 105,000+ records covering suppliers, warehouses, carriers and shipping modes
+                        to uncover operational trends and turn raw data into actionable business insights.
                     </p>
                     <div class="project-buttons">
-                        <a href="https://github.com/a-123-m/Supply-Chain-Data-Analysis-Python-Project" target="_blank" class="btn">View Project</a>
+                        <a href="https://github.com/a-123-m/Supply-Chain-Data-Analysis-Python-Project" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                     </div>
                 </div>
-            </div>
+            </article>
 
         </div>
     </div>
 </section>
 
-<!-- SKILLS SECTION -->
-<section id="skills" class="section">
+<!-- SKILLS -->
+<section id="skills" class="section section-dark">
     <div class="container">
         <h2>Technical Skillset</h2>
         <div class="skills-table">
-            
-            <!--💡UPDATE: Customize your skills in each category-->
-            <!-- Column 1: Data Visualization -->
+
             <div class="skill-column">
                 <div class="skill-header">
-                    <i class="fas fa-chart-pie"></i>
+                    <i class="fas fa-chart-pie" aria-hidden="true"></i>
                     <h3>Data Visualization</h3>
                 </div>
                 <ul class="skill-list">
@@ -166,25 +169,23 @@ As I worked with different teams and looked at application and business performa
                 </ul>
             </div>
 
-            <!-- Column 2: Data Analysis -->
             <div class="skill-column">
                 <div class="skill-header">
-                    <i class="fas fa-search-plus"></i>
+                    <i class="fas fa-search-plus" aria-hidden="true"></i>
                     <h3>Data Analysis</h3>
                 </div>
                 <ul class="skill-list">
                     <li>SQL</li>
                     <li>Advanced Excel</li>
-                    <li>Python (Numpy,Pandas)</li>
+                    <li>Python (NumPy, Pandas)</li>
                     <li>Google Sheets</li>
                 </ul>
             </div>
 
-            <!-- Column 3: Data Modeling & ETL -->
             <div class="skill-column">
                 <div class="skill-header">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Data Modeling & ETL</h3>
+                    <i class="fas fa-cogs" aria-hidden="true"></i>
+                    <h3>Data Modeling &amp; ETL</h3>
                 </div>
                 <ul class="skill-list">
                     <li>Power Query</li>
@@ -198,23 +199,26 @@ As I worked with different teams and looked at application and business performa
     </div>
 </section>
 
-<!-- CONTACT FORM SECTION -->
-<section id="contact" class="section">
+<!-- CONTACT -->
+<section id="contact" class="section section-darker">
     <div class="container">
-        <h2>Send me a message</h2>
-        
-        <!--💡UPDATE: Go to formsubmit.co and replace the email with your own-->
-        <form action="https://formsubmit.co/aiswarya2000mohan@gmail.com" method="POST" class="contact-form">
-            <p> Interested in collaborating or have questions about my work? I'd love to hear from you!</p>
+        <h2>Send Me a Message</h2>
 
-            <!-- Form Fields -->
+        <form action="https://formsubmit.co/aiswarya2000mohan@gmail.com" method="POST" class="contact-form">
+            <p>Interested in collaborating or have questions about my work? I'd love to hear from you.</p>
+
+            <!-- FormSubmit options -->
+            <input type="hidden" name="_subject" value="New message from your portfolio">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Your name" required>
+                <input type="text" name="name" id="name" placeholder="Your name" autocomplete="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Your email" required>
+                <input type="email" name="email" id="email" placeholder="Your email" autocomplete="email" required>
             </div>
             <div class="form-group">
                 <label for="subject">Subject</label>
@@ -224,23 +228,64 @@ As I worked with different teams and looked at application and business performa
                 <label for="message">Message</label>
                 <textarea name="message" id="message" rows="6" placeholder="Your message" required></textarea>
             </div>
-            
-            <!-- Submit Button -->
-            <button type="submit" class="btn">Send Message</button>
 
+            <button type="submit" class="btn">Send Message</button>
         </form>
     </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <!--💡UPDATE: Change the year and your name-->
         <p>&copy; 2026 Aiswarya Mohan. All rights reserved.</p>
     </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<!-- Typing animation: writes each role one by one, then erases and moves to the next -->
+<script>
+(function () {
+    var roles = ["Data Analyst", "Business Analyst", "Power BI Developer"];
+    var el = document.getElementById("typed-text");
+    if (!el) return;
+
+    // Respect users who prefer reduced motion: show all roles statically
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        el.textContent = roles.join(" | ");
+        return;
+    }
+
+    var roleIndex = 0, charIndex = 0, deleting = false;
+    var TYPE_SPEED = 90, DELETE_SPEED = 45, HOLD_AFTER_TYPED = 1600, HOLD_BEFORE_NEXT = 400;
+
+    function tick() {
+        var current = roles[roleIndex];
+
+        if (!deleting) {
+            charIndex++;
+            el.textContent = current.substring(0, charIndex);
+            if (charIndex === current.length) {
+                deleting = true;
+                return setTimeout(tick, HOLD_AFTER_TYPED);
+            }
+            return setTimeout(tick, TYPE_SPEED);
+        }
+
+        charIndex--;
+        el.textContent = current.substring(0, charIndex);
+        if (charIndex === 0) {
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            return setTimeout(tick, HOLD_BEFORE_NEXT);
+        }
+        setTimeout(tick, DELETE_SPEED);
+    }
+
+    el.textContent = "";
+    tick();
+})();
+</script>
 
 </body>
 </html>
