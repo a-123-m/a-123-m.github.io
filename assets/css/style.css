@@ -432,7 +432,7 @@ nav ul li a:hover::after {
 /* --- 5.3 Skills --- */
 .skills-table {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     background-color: var(--card-bg-color);
     padding: 40px;
