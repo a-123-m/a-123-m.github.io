@@ -75,48 +75,47 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ---------- Hero chart: count up the numbers and grow the bars once ---------- */
-    var chart = document.querySelector('.chart-card');
+    /* ---------- Hero card: count up the numbers once ---------- */
+    var statsCard = document.querySelector('.stats-card');
     var counters = document.querySelectorAll('[data-count]');
-
-    function format(n) { return n.toLocaleString('en-US'); }
 
     function runCounter(el) {
         var end = +el.dataset.count;
         var suffix = el.dataset.suffix || '';
-        if (reduceMotion) { el.textContent = format(end) + suffix; return; }
+        if (reduceMotion) { el.textContent = end + suffix; return; }
         var start = null;
         function step(t) {
             if (start === null) start = t;
-            var p = Math.min((t - start) / 1400, 1);
+            var p = Math.min((t - start) / 1200, 1);
             var eased = 1 - Math.pow(1 - p, 3);
-            el.textContent = format(Math.round(end * eased)) + (p === 1 ? suffix : '');
+            el.textContent = Math.round(end * eased) + (p === 1 ? suffix : '');
             if (p < 1) requestAnimationFrame(step);
         }
         requestAnimationFrame(step);
     }
 
-    function playChart() {
-        if (!chart || chart.classList.contains('is-in')) return;
-        chart.classList.add('is-in');
-        counters.forEach(runCounter);
-    }
-
-    if (chart) {
-        if (!reduceMotion) counters.forEach(function (c) { c.textContent = '0'; });
+    if (statsCard && counters.length) {
         if ('IntersectionObserver' in window && !reduceMotion) {
-            var chartObs = new IntersectionObserver(function (entries, obs) {
+            counters.forEach(function (c) { c.textContent = '0'; });
+            var statsObs = new IntersectionObserver(function (entries, obs) {
                 entries.forEach(function (entry) {
                     if (!entry.isIntersecting) return;
                     obs.disconnect();
-                    playChart();
+                    counters.forEach(runCounter);
                 });
             }, { threshold: 0.3 });
-            chartObs.observe(chart);
-        } else {
-            playChart();
+            statsObs.observe(statsCard);
         }
     }
+
+    /* ---------- Back to top (logo and footer link) ---------- */
+    document.querySelectorAll('a[href="#top"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+            setMenu(false);
+        });
+    });
 
     /* ---------- Project filter: buttons are built from the tool badges ---------- */
     var projects = Array.prototype.slice.call(document.querySelectorAll('.project'));
