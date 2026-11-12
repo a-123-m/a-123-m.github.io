@@ -33,12 +33,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body id="top">
 
 <a class="skip-link" href="#about">Skip to content</a>
 
 <!-- HEADER / NAVIGATION -->
-<header class="site-header" id="top">
+<header class="site-header">
     <div class="container nav-bar">
         <a class="brand" href="#top" aria-label="Aiswarya Mohan, back to top">
             <span class="brand-mark" aria-hidden="true">AM</span>
@@ -85,55 +85,51 @@
             <div class="hero-actions">
                 <a href="#projects" class="btn">View projects</a>
                 <a href="assets/AISWARYA%20MOHAN%20RESUME_NEWW_DA.pdf" download class="btn btn-ghost">Download resume</a>
-            </div>
 
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/aiswarya-mohan-950948221/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                <a href="https://github.com/a-123-m" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
-                <a href="mailto:aiswarya2000mohan@gmail.com" title="Email" aria-label="Send an email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/aiswarya-mohan-950948221/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://github.com/a-123-m" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="mailto:aiswarya2000mohan@gmail.com" title="Email" aria-label="Send an email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                </div>
             </div>
         </div>
 
-        <!-- A small live chart built from the projects below -->
-        <aside class="chart-card" aria-labelledby="chart-title">
-            <div class="chart-head">
-                <h2 id="chart-title">Records analysed</h2>
-                <span class="chip">4 projects</span>
+        <!-- Hero summary card -->
+        <aside class="stats-card" aria-labelledby="stats-title">
+            <h2 id="stats-title">What I've worked on</h2>
+
+            <div class="stat-pair">
+                <p class="stat">
+                    <span class="stat-num" data-count="10" data-suffix="+">10+</span>
+                    <span class="stat-label">Projects</span>
+                </p>
+                <p class="stat">
+                    <span class="stat-num" data-count="10" data-suffix="+">10+</span>
+                    <span class="stat-label">Dashboards</span>
+                </p>
             </div>
-            <p class="chart-total"><span data-count="446000" data-suffix="+">446,000+</span></p>
 
-            <ul class="bars">
-                <li style="--i:0">
-                    <a class="bar" href="#project-healthcare" style="--w:100%; --c:var(--c-violet)">
-                        <span class="bar-name">Healthcare analytics</span>
-                        <span class="bar-val" data-count="310000" data-suffix="+">310,000+</span>
-                        <span class="bar-track"><span class="bar-fill"></span></span>
-                    </a>
-                </li>
-                <li style="--i:1">
-                    <a class="bar" href="#project-supply" style="--w:58%; --c:var(--c-rose)">
-                        <span class="bar-name">Supply chain</span>
-                        <span class="bar-val" data-count="105000" data-suffix="+">105,000+</span>
-                        <span class="bar-track"><span class="bar-fill"></span></span>
-                    </a>
-                </li>
-                <li style="--i:2">
-                    <a class="bar" href="#project-amul" style="--w:30%; --c:var(--c-amber)">
-                        <span class="bar-name">Amul business analytics</span>
-                        <span class="bar-val" data-count="27000" data-suffix="+">27,000+</span>
-                        <span class="bar-track"><span class="bar-fill"></span></span>
-                    </a>
-                </li>
-                <li style="--i:3">
-                    <a class="bar" href="#project-ajio" style="--w:11%; --c:var(--c-teal)">
-                        <span class="bar-name">Ajio e-commerce</span>
-                        <span class="bar-val" data-count="4000" data-suffix="+">4,000+</span>
-                        <span class="bar-track"><span class="bar-fill"></span></span>
-                    </a>
-                </li>
-            </ul>
+            <div class="stat-group">
+                <h3>Across different domains</h3>
+                <ul class="tags">
+                    <li>E-commerce</li>
+                    <li>Supply chain</li>
+                    <li>Healthcare</li>
+                    <li>FMCG</li>
+                    <li>and more</li>
+                </ul>
+            </div>
 
-            <p class="chart-note">Bar length uses a square-root scale so the smaller projects stay visible. Select a bar to jump to that project.</p>
+            <div class="stat-group">
+                <h3>Built with</h3>
+                <ul class="tags tags-tools">
+                    <li>Excel</li>
+                    <li>SQL</li>
+                    <li>Python</li>
+                    <li>Power BI</li>
+                    <li>Tableau</li>
+                </ul>
+            </div>
         </aside>
 
     </div>
@@ -146,7 +142,7 @@
 
         <div class="about-text">
             <h2>About me</h2>
-            <p class="lead">I'm an MCA graduate who started in software testing, working on both high and low-revenue casino and poker games. It taught me to sweat the details and to see how a product really performs.</p>
+            <p>I'm an MCA graduate who started in software testing, working on both high and low-revenue casino and poker games. It taught me to sweat the details and to see how a product really performs.</p>
             <p>Working with different teams on application and business performance, I became more interested in the data behind it. That curiosity led me to analytics. Today I'm building my skills in Excel, SQL, Power BI, Python and Tableau through hands-on projects, with the goal of turning raw data into insight that helps businesses decide better.</p>
             <p>I'm looking to join a data-driven organization where I can apply these skills to real problems and keep growing. The projects below span healthcare, retail, food and supply chain.</p>
         </div>
@@ -158,7 +154,7 @@
     <div class="container">
         <div class="section-head">
             <h2>Projects</h2>
-            <p>Four analyses, each with the tools I used and the scale of data behind it. Select a screenshot to view it full size.</p>
+            <p>Different project analyses, each with the tools I used and the scale of data behind it. Click on the View Project button to explore the complete dashboard documentation on GitHub.</p>
         </div>
 
         <div class="project-list">
@@ -177,7 +173,7 @@
                         <li>Tableau</li>
                     </ul>
                     <p>Analyzed incidents across 300 hospitals, 92 locations, 40,000 patients and 50 disease conditions, helping stakeholders manage large volumes of healthcare network data and make better decisions by answering key business questions.</p>
-                    <a href="https://github.com/a-123-m/HealthCare-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a href="https://github.com/a-123-m/HealthCare-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                 </div>
             </article>
 
@@ -194,7 +190,7 @@
                         <li>Power BI</li>
                     </ul>
                     <p>Explored sales, returns, payments and customer behavior to identify business patterns, highlight top-performing areas and uncover opportunities for improvement.</p>
-                    <a href="https://github.com/a-123-m/Ajio-Ecommerce-Online-Shopping-Dashboard---Excel-SQL-and-PowerBI" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a href="https://github.com/a-123-m/Ajio-Ecommerce-Online-Shopping-Dashboard---Excel-SQL-and-PowerBI" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                 </div>
             </article>
 
@@ -210,7 +206,7 @@
                         <li>Power BI</li>
                     </ul>
                     <p>Consolidated sales, products, customers, regions and returns data to identify key business drivers, performance trends and opportunities for improvement.</p>
-                    <a href="https://github.com/a-123-m/Amul---The-Taste-of-India-Business-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a href="https://github.com/a-123-m/Amul---The-Taste-of-India-Business-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                 </div>
             </article>
 
@@ -228,7 +224,7 @@
                         <li>Seaborn</li>
                     </ul>
                     <p>Processed data on suppliers, warehouses, carriers and shipping modes to uncover operational trends and turn raw data into actionable business insights.</p>
-                    <a href="https://github.com/a-123-m/Supply-Chain-Data-Analysis-Python-Project" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a href="https://github.com/a-123-m/Supply-Chain-Data-Analysis-Python-Project" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View Project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                 </div>
             </article>
 
@@ -291,29 +287,34 @@
     </div>
 </section>
 
-<!-- JOURNEY -->
+<!-- JOURNEY (latest first) -->
 <section id="path" class="section section-alt">
     <div class="container">
         <div class="section-head">
             <h2>How I got here</h2>
-            <p>From a computer applications degree, through software testing, into data analytics.</p>
+            <p>My work and education, latest first.</p>
         </div>
 
         <ol class="timeline">
+            <li class="now">
+                <h3>Application Analyst <span class="badge-current">Current</span></h3>
+                <p class="where">Amrita Institute of Medical Sciences, Kochi</p>
+                <p>I analyze both clinical and non-clinical aspects of hospital operations, prepare Business Requirement Documents (BRDs), and automate manual work by building systems and testing them before release. I also train junior doctors and hospital staff on using the Hospital Management System (HMS) that Amrita runs across its departments.</p>
+            </li>
             <li>
-                <h3>Integrated BCA MCA</h3>
-                <p class="where">Amrita Vishwa Vidyapeetham, Kochi</p>
-                <p>A computer applications degree that gave me the programming and database foundation for analytics.</p>
+                <h3>Power BI Intern</h3>
+                <p class="where">Foresight BI and Analytics</p>
+                <p>Worked on understanding the business and building Power BI dashboards for a Germany-based pharmaceutical company.</p>
             </li>
             <li>
                 <h3>Junior QA Engineer</h3>
                 <p class="where">Software testing, casino and poker games</p>
                 <p>Tested games across high and low-revenue products, building the attention to detail and analytical habits I now use on data.</p>
             </li>
-            <li class="now">
-                <h3>Data analytics</h3>
-                <p class="where">Excel, SQL, Power BI, Python and Tableau</p>
-                <p>Building dashboards and analyses across healthcare, retail, food and supply chain data.</p>
+            <li>
+                <h3>Integrated BCA MCA</h3>
+                <p class="where">Amrita Vishwa Vidyapeetham, Kochi</p>
+                <p>A computer applications degree that gave me the programming and database foundation for analytics.</p>
             </li>
         </ol>
     </div>
